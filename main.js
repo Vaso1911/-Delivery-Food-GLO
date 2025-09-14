@@ -25,7 +25,7 @@ function init() {
   }
 
   function initRestaurantPage() {
-    let title = 'Delivery Food GLO';
+    let title = 'Ресторан';
 
     try {
       title = localStorage.getItem('restaurantTitle') || title;
@@ -38,7 +38,9 @@ function init() {
     if (titleElement) {
       titleElement.textContent = title;
     }
-    document.title = `${title} - Наш Ресторан`;
+    if(window.location.pathname === '/restaurant.html') {
+      document.title = `${title} - Наш Ресторан`;
+    }
   }
   initCards()
   initRestaurantPage()
