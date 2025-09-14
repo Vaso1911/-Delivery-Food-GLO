@@ -25,7 +25,7 @@ function init() {
   }
 
   function initRestaurantPage() {
-    let title = 'Ресторан';
+    let title = 'Delivery Food GLO';
 
     try {
       title = localStorage.getItem('restaurantTitle') || title;
