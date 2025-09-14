@@ -1,0 +1,35 @@
+.title-wrapper {
+  display: flex;
+ gap: 30px;
+}
+
+.card__name {
+  display: block;
+}
+
+.card__title {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 133%;
+}
+
+.card__descr {
+  margin: 0;
+  margin-bottom: 24px;
+  padding-top: 10px;
+  font-size: 18px;
+  color: var(--gray-color);
+}
+
+.card__action {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.card__price {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 160%;
+  color: var(--dark-color);
+}
