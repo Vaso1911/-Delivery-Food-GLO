@@ -37,10 +37,11 @@ function init() {
     const titleElement = document.querySelector('.title-section');
     if (titleElement) {
       titleElement.textContent = title;
+      if (window.location.pathname === '/restaurant.html') {
+        document.title = `${title} - Наш Ресторан`;
+      }
     }
-    if(window.location.pathname === '/restaurant.html') {
-      document.title = `${title} - Наш Ресторан`;
-    }
+
   }
   initCards()
   initRestaurantPage()
