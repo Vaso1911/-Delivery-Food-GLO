@@ -50,19 +50,28 @@ function init() {
   // модалка 
   const cart = document.querySelector('.header__cart');
   const modalOverlay = document.querySelector('.modal-overlay');
-  
+
+  function handleEscapeKey(e) {
+    if (e.code === 'Escape') {
+      closeModal();
+    }
+  }
+
   function openModal() {
     modalOverlay.classList.add('modal-visible')
+    document.addEventListener('keydown', handleEscapeKey);
   }
-  function closeModal() {
-    const modal = document.querySelector('.modal');
-    const btnClose = document.querySelector('.modal__close');
-    if (!modal || btnClose) {
+
+  function closeModal(e) {
+    const btnClose = e.target.closest('.modal__close');
+    const btnCancel = e.target.closest('#btn-cancel');
+    const modal = e.target.closest('.modal');
+    document.removeEventListener('keydown', handleEscapeKey);
+
+    if (btnClose || btnCancel || !modal) {
       modalOverlay.classList.remove('modal-visible')
     }
   }
-  
-
 
   cart.addEventListener('click', openModal);
   modalOverlay.addEventListener('click', closeModal);
