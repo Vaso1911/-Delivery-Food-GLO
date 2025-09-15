@@ -57,24 +57,28 @@ function init() {
     }
   }
 
+  function handleCloseClick(e) {
+    const btnClose = e.target.closest('.modal__close');
+    const btnCancel = e.target.closest('#btn-cancel');
+    const modal = e.target.closest('.modal');
+
+    if (btnClose || btnCancel || !modal) {
+      closeModal();
+    }
+  }
+
   function openModal() {
     modalOverlay.classList.add('modal-visible')
     document.addEventListener('keydown', handleEscapeKey);
   }
 
-  function closeModal(e) {
-    const btnClose = e.target.closest('.modal__close');
-    const btnCancel = e.target.closest('#btn-cancel');
-    const modal = e.target.closest('.modal');
+  function closeModal() {
+    modalOverlay.classList.remove('modal-visible');
     document.removeEventListener('keydown', handleEscapeKey);
-
-    if (btnClose || btnCancel || !modal) {
-      modalOverlay.classList.remove('modal-visible')
-    }
   }
 
   cart.addEventListener('click', openModal);
-  modalOverlay.addEventListener('click', closeModal);
+  modalOverlay.addEventListener('click', handleCloseClick);
 
 }
 
