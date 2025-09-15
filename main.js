@@ -37,7 +37,8 @@ function init() {
     const titleElement = document.querySelector('.title-section');
     if (titleElement) {
       titleElement.textContent = title;
-      if (window.location.pathname === '/restaurant.html') {
+      const isRestaurantPage = window.location.pathname.includes('restaurant.html')
+      if (isRestaurantPage) {
         document.title = `${title} - Наш Ресторан`;
       }
     }
@@ -45,7 +46,29 @@ function init() {
   }
   initCards()
   initRestaurantPage()
+
+  // модалка 
+  const cart = document.querySelector('.header__cart');
+  const modalOverlay = document.querySelector('.modal-overlay');
+  
+  function openModal() {
+    modalOverlay.classList.add('modal-visible')
+  }
+  function closeModal() {
+    const modal = document.querySelector('.modal');
+    const btnClose = document.querySelector('.modal__close');
+    if (!modal || btnClose) {
+      modalOverlay.classList.remove('modal-visible')
+    }
+  }
+  
+
+
+  cart.addEventListener('click', openModal);
+  modalOverlay.addEventListener('click', closeModal);
+
 }
+
 
 
 document.addEventListener('DOMContentLoaded', init);
