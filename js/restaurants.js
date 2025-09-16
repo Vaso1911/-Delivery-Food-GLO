@@ -65,7 +65,7 @@ function renderRest(restaurants) {
   restaurants.forEach(restaurant => {
     listCard.insertAdjacentHTML('beforeend', `
                   <li class="cards__item" id="id=${restaurant.id}">
-            <a href="/restaurant.html" class="card-link">
+            <a href="../restaurant.html" class="card-link">
               <article class="card">
                 <img class="card__img" src="./img/restaurants/${restaurant.img}" alt="${restaurant.title}">
                 <div class="card__info">
