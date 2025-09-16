@@ -1,6 +1,8 @@
+// import {loadRestaurants} from './restaurant.js'
 function init() {
-  function initCards() {
+    const isRestaurantPage = window.location.pathname.includes('restaurant.html')
     const cards = document.querySelectorAll('.card-link');
+  function initCards() {
 
     if (!cards.length) return;
 
@@ -37,9 +39,9 @@ function init() {
     const titleElement = document.querySelector('.title-section');
     if (titleElement) {
       titleElement.textContent = title;
-      const isRestaurantPage = window.location.pathname.includes('restaurant.html')
+    
       if (isRestaurantPage) {
-        document.title = `${title} - Наш Ресторан`;
+        document.title = `Delivery Food GLO ${title}`;
       }
     }
 
@@ -79,6 +81,8 @@ function init() {
 
   cart.addEventListener('click', openModal);
   modalOverlay.addEventListener('click', handleCloseClick);
+
+// загрузка ресторанов и карточек
 
 }
 

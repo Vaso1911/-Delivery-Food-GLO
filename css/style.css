@@ -143,6 +143,25 @@ a {
   color: var(--graySecondary-color);
 }
 
+.load {
+  margin: 0 auto;
+}
+
+.load-animation {
+    animation-name: spin;
+    animation-duration: 0.6s; /* Продолжительность одного оборота */
+    animation-iteration-count: infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
 
@@ -171,7 +190,7 @@ a {
 
 .hero__container {
   padding: 67px 70px;
-  background-image: url(./img/hero.jpg);
+  background-image: url(../img/hero.jpg);
   background-repeat: no-repeat;
 }
 

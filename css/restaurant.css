@@ -1,6 +1,7 @@
 .title-wrapper {
   display: flex;
- gap: 30px;
+  align-items: center;
+  gap: 30px;
 }
 
 .card__name {
